@@ -1,6 +1,7 @@
 package edu.mu.pizza;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public abstract class AbstractPizza {
@@ -24,6 +25,7 @@ public abstract class AbstractPizza {
 		this.cookingPrice = cookingPrice;
 		
 	}
+
 	
 	
 	//getters/setters
@@ -70,6 +72,26 @@ public abstract class AbstractPizza {
 		this.cookingPrice = cookingPrice;
 	}
 	
+	protected double addToppingToPrice(double priceWithoutToppings) {
+		Iterator<Toppings>topIterator = toppingList.iterator();
+		double totalPrice = priceWithoutToppings;
+		while(topIterator.hasNext()) {
+			Toppings top = topIterator.next();
+			totalPrice += top.getToppingPrice();
+			
+		}
+		return totalPrice;
+	}
+	public double updatePizzaPrice() {
+		Iterator<Toppings>topIterator = this.toppingList.iterator();
+		double totalPrice = this.priceWithoutToppings;
+		while(topIterator.hasNext()) {
+			Toppings top = topIterator.next();
+			totalPrice += top.getToppingPrice();
+			
+		}
+		return totalPrice;
+	}
 	
 	
 
