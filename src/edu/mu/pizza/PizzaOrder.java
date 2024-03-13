@@ -14,6 +14,7 @@ public class PizzaOrder {
 				return pizzaOrderList.get(i);
 			}
 		}
+		return null;
 	}
 
 	public void printListOfToppingsByPizzaOrderID(int orderID) {
@@ -23,6 +24,16 @@ public class PizzaOrder {
 			}
 		}
 	}
+	
+	public boolean isThereAnyUncookedPizza() {
+		for (int i = 0; i <pizzaOrderList.size(); i++) { //increments thru list
+			if(pizzaOrderList.get(i).getCookingStrategy() == null){ //checking cook strat, return true if any are uncooked 
+				return true; //pizza with unassigned strat found
+			}
+		}
+		return false; //no pizzas without assigned strat
+	}
+	
 	
 
 	
