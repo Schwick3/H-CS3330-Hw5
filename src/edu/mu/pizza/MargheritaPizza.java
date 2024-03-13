@@ -5,25 +5,23 @@ import java.util.Iterator;
 
 public class MargheritaPizza extends AbstractPizza {
 
-	public MargheritaPizza(ArrayList<Toppings> toppingList, double priceWithoutToppings, double totalPrice, int pizzaOrderID, int orderIDCounter, ICookingStrategy cookingStrategy, double cookingPrice) {
-		super(toppingList, totalPrice, pizzaOrderID, orderIDCounter, orderIDCounter, cookingStrategy, cookingPrice);
-		this.totalPrice = addToppingToPrice(this.priceWithoutToppings = 2.5);
-		
-		
-		
+
+	public MargheritaPizza() {
+		super();
+		this.toppingList.add(Toppings.CHEESE);
+		this.toppingList.add(Toppings.TOMATO);
+		this.setPriceWithoutToppings(2.50);
 	}
 	@Override
 	protected double addToppingToPrice(double priceWithoutToppings) {
-		this.toppingList.add(Toppings.CHEESE);
-		this.toppingList.add(Toppings.TOMATO);
-		Iterator<Toppings>topIterator = toppingList.iterator();
-		double totalPrice = priceWithoutToppings;
+		Iterator<Toppings>topIterator = toppingList.iterator(); //iterator for the toppings list
+		double totalPrice = priceWithoutToppings; 
 		while(topIterator.hasNext()) {
 			Toppings top = topIterator.next();
-			totalPrice += top.getToppingPrice();
+			totalPrice += top.getToppingPrice(); //adds the price of each topping to the total price
 			
 		}
-		return totalPrice;
+		return totalPrice; // returns the total price
 	}
 	@Override
 	public String toString() {

@@ -5,15 +5,9 @@ import java.util.Iterator;
 
 public class SupremePizza extends AbstractPizza{
 
-	public SupremePizza(ArrayList<Toppings> toppingList, double priceWithoutToppings, double totalPrice,
-			int pizzaOrderID, int orderIDCounter, ICookingStrategy cookingStrategy, double cookingPrice) {
-		super(toppingList, priceWithoutToppings, totalPrice, pizzaOrderID, orderIDCounter, cookingStrategy, cookingPrice);
-		
-		this.totalPrice = addToppingToPrice(this.priceWithoutToppings = 3.5);
 
-	}
-	@Override
-	protected double addToppingToPrice(double priceWithoutToppings) {
+	public SupremePizza() {
+		super();
 		this.toppingList.add(Toppings.CHEESE);
 		this.toppingList.add(Toppings.TOMATO);
 		this.toppingList.add(Toppings.BELL_PEPPER);
@@ -21,6 +15,11 @@ public class SupremePizza extends AbstractPizza{
 		this.toppingList.add(Toppings.PEPPERONI);
 		this.toppingList.add(Toppings.BLACK_OLIVE);
 		this.toppingList.add(Toppings.MUSHROOM);
+		this.setPriceWithoutToppings(3.50);
+	}
+	@Override
+	protected double addToppingToPrice(double priceWithoutToppings) {
+
 		Iterator<Toppings>topIterator = toppingList.iterator();
 		double totalPrice = priceWithoutToppings;
 		while(topIterator.hasNext()) {

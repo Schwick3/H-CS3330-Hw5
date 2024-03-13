@@ -13,6 +13,13 @@ public abstract class AbstractPizza {
 	protected ICookingStrategy cookingStrategy;
 	protected double cookingPrice;
 	
+	public AbstractPizza() {
+		this.toppingList = new ArrayList<Toppings>();
+		this.setPriceWithoutToppings(0);
+		this.setPizzaOrderID(0);;
+		this.setCookingStrategy(null);
+		this.setCookingPrice(0);
+	}
 	
 	//constructor
 	public AbstractPizza(ArrayList<Toppings> toppingList, double priceWithoutToppings, double totalPrice, int pizzaOrderID, int orderIDCounter, ICookingStrategy cookingStrategy, double cookingPrice ) {
@@ -20,7 +27,6 @@ public abstract class AbstractPizza {
 		this.priceWithoutToppings = priceWithoutToppings;
 		this.totalPrice = totalPrice;
 		this.pizzaOrderID = pizzaOrderID;
-		this.orderIDCounter = orderIDCounter;
 		this.cookingStrategy = cookingStrategy;
 		this.cookingPrice = cookingPrice;
 		
