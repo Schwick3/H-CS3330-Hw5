@@ -24,21 +24,6 @@ public class PizzaOrder {
 		}
 	}
 	
-	
-	public boolean addNewToppingToPizza(int orderID, Toppings topping) {
-		pizzaOrderList.
-		//increment thru list till toppings match (returns false) or list ends
-		//list ends, adds topping and updates price before returning true
-	}
-	
-	public boolean isThereAnyUncookedPizza() {
-		//increment thru pizza order list checking cook strat, return true if any are uncooked 
-		//false if all cooked
-	}
-	
-	public boolean selectCookingStrategyByPizzaOrderID(int orderID, CookingStyleType cookingStrategyType) {
-		
-	}
 
 	
 	
