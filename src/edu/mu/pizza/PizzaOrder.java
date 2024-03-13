@@ -46,14 +46,29 @@ public class PizzaOrder {
 			}
 	}
 
-	
-	
+
+
+
 	public boolean selectCookingStrategyByPizzaOrderID(int orderID, CookingStyleType cookingStrategyType) {
-		getPizzaByOrderID(orderID).setCookingStrategy(cookingStrategyType);
-		cookingStrategyType = new cook(); //instatiates cooking strat
-		cook(getPizzabByOrderID(orderID)); //calls cook function
-	}	
-	
+		switch(cookingStrategyType) { //switch statement to determine which cooking strategy to use
+			case MICROWAVE:
+				getPizzaByOrderID(orderID).setCookingStrategy(new MicrowaveCookingStrategy());
+				getPizzaByOrderID(orderID).getCookingStrategy().cook(getPizzaByOrderID(orderID));
+				return true;
+			case CONVENTIONAL_OVEN:
+				getPizzaByOrderID(orderID).setCookingStrategy(new ConventionalOvenCookingStrategy());
+				getPizzaByOrderID(orderID).getCookingStrategy().cook(getPizzaByOrderID(orderID));
+				return true;
+			case BRICK_OVEN:
+				getPizzaByOrderID(orderID).setCookingStrategy(new BrickOvenCookingStrategy());
+				getPizzaByOrderID(orderID).getCookingStrategy().cook(getPizzaByOrderID(orderID));
+				return true;
+		}
+
+		return false;
+
+	}
+
 
 	public PizzaOrder (PizzaCookingFactory pizzaFactory, List<AbstractPizza> pizzaOrderList) { // variable constructor
 		this.pizzaFactory = pizzaFactory;
