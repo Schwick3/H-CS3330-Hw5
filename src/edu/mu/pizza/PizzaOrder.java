@@ -44,7 +44,8 @@ public class PizzaOrder {
 				return true; //returns true with added topping
 				
 			}
-		}
+	}
+
 	
 	
 	public boolean selectCookingStrategyByPizzaOrderID(int orderID, CookingStyleType cookingStrategyType) {
@@ -53,7 +54,7 @@ public class PizzaOrder {
 		cook(getPizzabByOrderID(orderID)); //calls cook function
 	}	
 	
-}
+
 	public PizzaOrder (PizzaCookingFactory pizzaFactory, List<AbstractPizza> pizzaOrderList) { // variable constructor
 		this.pizzaFactory = pizzaFactory;
 		this.pizzaOrderList = pizzaOrderList;
@@ -97,6 +98,7 @@ public class PizzaOrder {
 					if (top == topping) { // if the right topping is found it is removed. 
 						iterator.remove();
 						pizza.updatePizzaPrice();
+						pizza.setToppingList(toppings);
 						return true;
 					}
 					else { // else it returns false to and nothing is changed on the pizza.
@@ -130,6 +132,7 @@ public class PizzaOrder {
 		
 		return total;
 	}
+}
 		
 
 
