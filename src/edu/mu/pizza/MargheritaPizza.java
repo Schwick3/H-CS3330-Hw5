@@ -11,7 +11,7 @@ public class MargheritaPizza extends AbstractPizza {
 		this.toppingList.add(Toppings.CHEESE);
 		this.toppingList.add(Toppings.TOMATO);
 		this.setPriceWithoutToppings(2.50);
-		this.addToppingToPrice(this.getPriceWithoutToppings());
+		this.setTotalPrice(this.addToppingToPrice(this.getPriceWithoutToppings()));
 	}
 	@Override
 	protected double addToppingToPrice(double priceWithoutToppings) {
