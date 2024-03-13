@@ -45,6 +45,15 @@ public class PizzaOrder {
 				
 			}
 		}
+	
+	
+	public boolean selectCookingStrategyByPizzaOrderID(int orderID, CookingStyleType cookingStrategyType) {
+		getPizzaByOrderID(orderID).setCookingStrategy(cookingStrategyType);
+		cookingStrategyType = new cook(); //instatiates cooking strat
+		cook(getPizzabByOrderID(orderID)); //calls cook function
+	}	
+	
+}
 	public PizzaOrder (PizzaCookingFactory pizzaFactory, List<AbstractPizza> pizzaOrderList) { // variable constructor
 		this.pizzaFactory = pizzaFactory;
 		this.pizzaOrderList = pizzaOrderList;
