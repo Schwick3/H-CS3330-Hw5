@@ -98,14 +98,9 @@ public class PizzaOrder {
 					if (top == topping) { // if the right topping is found it is removed. 
 						iterator.remove();
 						pizza.updatePizzaPrice();
-						pizza.setToppingList(toppings);
 						return true;
 					}
-					else { // else it returns false to and nothing is changed on the pizza.
-						return false;
-						
-						
-					}
+					
 				}
 			}
 		}
