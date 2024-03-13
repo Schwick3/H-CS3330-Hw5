@@ -34,7 +34,18 @@ public class PizzaOrder {
 		return false; //no pizzas without assigned strat
 	}
 	
-	
+	public boolean addNewToppingToPizza(int orderID, Toppings topping) {
+		if(getPizzaByOrderID(orderID).getToppingList().contains(topping)){
+				return false; //pizza already has topping
+			} else {
+				getPizzaByOrderID(orderID).getToppingList().add(topping); //add topping
+				getPizzaByOrderID(orderID).updatePizzaPrice(); //updates price
+				return true; //returns true with added topping
+				
+			}
+		}
+		
+
 
 	
 	
