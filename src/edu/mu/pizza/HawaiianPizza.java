@@ -12,6 +12,7 @@ public class HawaiianPizza extends AbstractPizza{
 		this.toppingList.add(Toppings.CANADIAN_BACON);
 		this.toppingList.add(Toppings.PINEAPPLE);
 		this.setPriceWithoutToppings(3.00);
+		this.addToppingToPrice(this.getPriceWithoutToppings());
 	}
 	@Override
 	protected double addToppingToPrice(double priceWithoutToppings) {
