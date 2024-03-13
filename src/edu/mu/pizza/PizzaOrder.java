@@ -90,8 +90,7 @@ public class PizzaOrder {
 		//This for loop goes through looking for the correct pizzaID
 		for (AbstractPizza pizza: pizzaOrderList) {
 			if (pizza.getPizzaOrderID() == orderID) {
-				List<Toppings> toppings = pizza.getToppingList();
-				Iterator<Toppings> iterator = toppings.iterator();
+				Iterator<Toppings> iterator = (pizza.getToppingList()).iterator();
 				//iterates through the toppings on the desired pizza.
 				while (iterator.hasNext()) {
 					Toppings top = iterator.next();
